@@ -22,11 +22,11 @@ await page.goto('https://helpdesk.dagangnet.com/Dnex/Login.aspx');
 
 
 await page.evaluate(() => document.querySelector('#txtUserID_I').value = '');
-await page.type('#txtUserID_I', 'fakrurrazi@dnex.com.my', { timeout: 10000 });
+await page.type('#txtUserID_I', '@dnex.com.my', { timeout: 10000 });
 
 // Clear and type the password
 await page.evaluate(() => document.querySelector('#txtPassword_I').value = '');
-await page.$eval('#txtPassword_I', (el, value) => el.value = value, 'P@ssw0rd');
+await page.$eval('#txtPassword_I', (el, value) => el.value = value, 'P@');
 
 await page.click('#btnSubmitForm');
 
