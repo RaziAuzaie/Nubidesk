@@ -107,22 +107,7 @@ if (rowData == 'Open') //change this value for Open status
    
  ]);
 	 
-   // await page.evaluate(() => document.querySelector('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor5_I').value = '');
-  
-   // await page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor5_I', (el, value) => el.value = value, 'Muhammad Fakrurrazi Auzaie Rohizam');
-   
-   // await page.evaluate(() => document.querySelector('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor19_I').value = '');
-  
-   // await page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor19_I', (el, value) => el.value = value, 'In Progress');
-   
-   // await page.evaluate(() => document.querySelector('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor21_I').value = '');
-  
-   // await page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor21_I', (el, value) => el.value = value, 'PIC will check and revert');
-  
-   // page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_T1', element => element.click());
-  
-	  // page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_AT0', element => element.click());
-  
+ 
     // const iframeContent = await page.evaluate(() => {
         // const iframe = document.querySelector('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_txtRemark_DesignIFrame');
         // if (!iframe) return "No iframe found.";
