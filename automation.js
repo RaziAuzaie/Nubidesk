@@ -1,5 +1,6 @@
 //Ver1.0 - Razi 25.5.2025
-//Ver1.1 - update button
+//Ver1.1 - dynamic update button 27.5.25
+//Ver1.1 - No more crash becuase of unhandle error 30.5.26
 
 
 const puppeteer = require('puppeteer');
@@ -49,12 +50,10 @@ console.log('Logged in successfully!');
     console.error('Navigation failed:', error);
   }
   
-// page.waitForNavigation()
 
 const element = await page.$('#ctl00_MainPane_MainContent_ASPxFormLayout1_gv_cell0_20_cmdView');
 
 
-//await Promise.all([
 
 await page.waitForSelector('[id^="ctl00_MainPane_MainContent_ASPxFormLayout1_gv_DXDataRow"]'); // Wait for the first row to ensure table is loaded
 // Dynamically count the number of rows
@@ -62,7 +61,7 @@ const rowCount = await page.$$eval('[id^="ctl00_MainPane_MainContent_ASPxFormLay
 console.log(`Found ${rowCount} rows in the table.`);
 
 
- for (let i = 0; i <= rowCount; i++) {
+ for (let i = 0; i < rowCount; i++) {
    
 	//console.log(`#ctl00_MainPane_MainContent_ASPxFormLayout1_gv_DXDataRow${i}`);
 
@@ -76,6 +75,7 @@ console.log(`Found ${rowCount} rows in the table.`);
   
 	
   const row = document.querySelector(selector);
+  if (!row) return null; // Safety check if selector doesn't match
   const cells = row.querySelectorAll('td'); // Get all <td> elements inside the <tr>
   const data = [];
 
@@ -154,7 +154,6 @@ if (rowData == 'Open') //change this value for Open status
   
   page.$eval('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXEditor21_I', (el, value) => el.value = value, 'PIC will check and revert');
   
-  // page.click('#ctl00_MainPane_MainContent_splitter_ucCaseInfo_ASPxFormLayout1_modTabPage_ucSubCase_gvTask_DXEFL_DXCBtn3');
   
   
   page.click('[data-args="[[\'UpdateEdit\'],1]"]');
@@ -171,7 +170,7 @@ if (rowData == 'Open') //change this value for Open status
   
   else
   {
-	  console.log('No Open Ticket');
+	  console.log('Not Open Ticket');
 	  //await browser.close();
   } 
   
